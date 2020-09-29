@@ -40,4 +40,12 @@ class UserRegistrationTest extends FunSuite{
     val userRegistration = new UserRegistration()
     assert(userRegistration.validateMobNum("91789") === false)
   }
+  test ("givenPasswordWithMinimum8CharsWhenValidReturnTrue") {
+    val userRegistration = new UserRegistration()
+    assert(userRegistration.validatePasswordMin8Chars("917hbgh$") === true)
+  }
+  test ("givenPasswordWithMinimum8CharsWhenNotValidReturnFalse") {
+    val userRegistration = new UserRegistration()
+    assert(userRegistration.validatePasswordMin8Chars("9") === false)
+  }
 }
