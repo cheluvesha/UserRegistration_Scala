@@ -12,4 +12,12 @@ class UserRegistrationTest extends FunSuite{
     val userRegistration = new UserRegistration()
     assert(userRegistration.validateFirstName("Ch") === false)
   }
+  test ("givenLastNameWhenValidReturnTrue") {
+    val userRegistration = new UserRegistration()
+    assert(userRegistration.validateLastName("Bharath") === true)
+  }
+  test ("givenLastNameWhenNotValidReturnFalse") {
+    val userRegistration = new UserRegistration()
+    assert(userRegistration.validateLastName("Bh") === false)
+  }
 }
