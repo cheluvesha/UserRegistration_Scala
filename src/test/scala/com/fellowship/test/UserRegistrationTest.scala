@@ -3,17 +3,14 @@ import com.fellowship.UserRegistration
 import org.scalatest.FunSuite
 
 class UserRegistrationTest extends FunSuite{
-
+  val userRegistration = new UserRegistration()
   test ("givenFirstNameWhenValidReturnTrue") {
-    val userRegistration = new UserRegistration()
     assert(userRegistration.validateFirstName("Cheluvesha") === true)
   }
   test ("givenFirstNameWhenNotValidReturnFalse") {
-    val userRegistration = new UserRegistration()
     assert(userRegistration.validateFirstName("Ch") === false)
   }
   test ("givenLastNameWhenValidReturnTrue") {
-    val userRegistration = new UserRegistration()
     assert(userRegistration.validateLastName("Bharath") === true)
   }
   test ("givenLastNameWhenNotValidReturnFalse") {
@@ -21,11 +18,9 @@ class UserRegistrationTest extends FunSuite{
     assert(userRegistration.validateLastName("Bh") === false)
   }
   test ("givenEmailWhenValidReturnTrue") {
-    val userRegistration = new UserRegistration()
     assert(userRegistration.validateEmail("abc.xyz@bl.com.in") === true)
   }
   test ("givenEmailWhenNotValidReturnFalse") {
-    val userRegistration = new UserRegistration()
     assert(userRegistration.validateEmail("com.in") === false)
   }
   test ("givenMobNumWhenValidReturnTrue") {
@@ -33,11 +28,9 @@ class UserRegistrationTest extends FunSuite{
     assert(userRegistration.validateMobNum("91 7894561234") === true)
   }
   test ("givenMobNumWithNoSpaceWhenValidReturnTrue") {
-    val userRegistration = new UserRegistration()
     assert(userRegistration.validateMobNum("917894561234") === true)
   }
   test ("givenMobNumWhenNotValidReturnFalse") {
-    val userRegistration = new UserRegistration()
     assert(userRegistration.validateMobNum("91789") === false)
   }
 }
