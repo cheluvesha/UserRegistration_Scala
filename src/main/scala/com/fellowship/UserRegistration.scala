@@ -6,6 +6,7 @@ class UserRegistration {
   val PasswordMin8Chars = "^.{8,}$"
   val PasswordWithUC = ".*[A-Z].*"
   val PasswordWithNumeric = "^[A-Za-z0-9]{8,}"
+  val PasswordWithSymbol = "^[0-9A-Za-z]*[!@#$%&][A-Za-z0-9]*$"
   // validates Firstname
   def validateFirstName(firstName: String): Boolean ={
     firstName.matches(Name)
@@ -33,5 +34,9 @@ class UserRegistration {
   // validates password with Numeric
   def validPassWithNumeric(passwordWithNumeric: String): Boolean ={
     passwordWithNumeric.matches(PasswordWithNumeric)
+  }
+  // validate password with Special symbol
+  def validPassWithSpecialSymbol(passwordWithSymbol: String): Boolean ={
+    passwordWithSymbol.matches(PasswordWithSymbol)
   }
 }

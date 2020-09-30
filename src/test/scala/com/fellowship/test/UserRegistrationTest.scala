@@ -64,4 +64,12 @@ class UserRegistrationTest extends FunSuite{
     val userRegistration = new UserRegistration()
     assert(userRegistration.validPassWithNumeric("baa") === false)
   }
+  test ("givenPasswordWithSpecialSymbolWhenValidReturnTrue") {
+    val userRegistration = new UserRegistration()
+    assert(userRegistration.validPassWithSpecialSymbol("baasD6$767") === true)
+  }
+  test ("givenPasswordWithNoSpecialSymbolWhenNotValidReturnFalse") {
+    val userRegistration = new UserRegistration()
+    assert(userRegistration.validPassWithSpecialSymbol("baasD767") === false)
+  }
 }
